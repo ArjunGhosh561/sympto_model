@@ -335,7 +335,7 @@ def predict():
             commonresult = {
                 "result": result,
                 "Accuracy": decisiontreeaccuracy, # You can choose any accuracy here
-                "DietsPrescribed": diet_dataset[result],
+                "Dietsprescribed": diet_dataset[result],
                 "Doctor": doctors[result],
                 "desc":disease_descriptions[result]
                 }
@@ -356,7 +356,7 @@ def predict():
                 "result": commonprediction,
                 
                 "Accuracy": calculate_accuracy(clf3, X_test, np.ravel(y_test)),  # Assuming you want the accuracy of the common prediction
-                "DietsPrescribed": diet_dataset[commonprediction],
+                "Dietsprescribed": diet_dataset[commonprediction],
                 "Doctor": doctors[commonprediction],
                 "desc":disease_descriptions[commonprediction]
                   # You can choose any other model for accuracy
@@ -364,7 +364,7 @@ def predict():
             result2={
                 "result": otherprediction,
                 "Accuracy": calculate_accuracy(clf4, X_test, np.ravel(y_test)),
-                "DietsPrescribed": diet_dataset[otherprediction],
+                "Dietsprescribed": diet_dataset[otherprediction],
                 "Doctor": doctors[otherprediction],
                 "desc":disease_descriptions[otherprediction]
             } 
@@ -381,7 +381,7 @@ def predict():
         nbmodelsaccuracies ={
             "result": naivebayesprediction,
             "Accuracy":naivebayesaccuracy,
-            "Dietsprescribed ": diet_dataset[naivebayesprediction],
+            "Dietsprescribed": diet_dataset[naivebayesprediction],
             "Doctor":doctors[naivebayesprediction],
             "desc":disease_descriptions[naivebayesprediction]
         }
@@ -389,14 +389,14 @@ def predict():
         dtmodelsaccuracies = {
             "result":decisiontreeprediction,
             "Accuracy":decisiontreeaccuracy,
-            "Dietsprescribed ": diet_dataset[decisiontreeprediction],
+            "Dietsprescribed": diet_dataset[decisiontreeprediction],
             "Doctor": doctors[decisiontreeprediction],
             "desc":disease_descriptions[decisiontreeprediction]
         }
         rfmodelsaccuracies ={
             "result": randomforestprediction,
             "Accuracy":randomforestaccuracy,
-            "Dietsprescribed ": diet_dataset[naivebayesprediction],
+            "Dietsprescribed": diet_dataset[naivebayesprediction],
             "Doctor":doctors[randomforestprediction],
             "desc":disease_descriptions[randomforestprediction]
         }
